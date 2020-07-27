@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+/*Typography
+--------------------------------------------------------------*/
+body {
+  background: #e0e0e0;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+p {
+  margin-bottom: 1.5em;
+
+}
+
+strong {
+  font-weight: bold;
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+img {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: auto;
+}
+
+.section-content {
+  padding: 1.4em;
+}
+
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.mainFlex {
+  display: flex;
+  justify-content: center;
+}
+
+.mainFlex__userCard {
+    width: 15%;
+}
+
+.mainFlex__subpage {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 10px 0;
+  padding: 10px 40px;
+}
+
+.mainFlex__friendList {
+  width: 15%;
+}
