@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useEffect, useState }  from "react";
 import { Link } from "react-router-dom";
+import './home.css';
+import UserCard from '../auth/UserCard';
 
 
 
 const Home = () => {
     return (
       <>
-        <main className="homeContainer">
-          <div className="homeContainer-contents">
-          <section className="homeHeader">
-            <img className="logo" src={('./images/logo.png')} alt='logo' />
-            <h1>Welcome to your Decisive Friend</h1>
+        <main className="mainFlex">
+          <section className="mainFlex__userCard">
+              <UserCard />
           </section>
+          <div className="homeContainer">
+            <div className="logo">
+              <img src={('./images/logo.png')} alt='logo' />
+            </div>
+              <h1 className="homeHeader">Welcome to your Decisive Friend</h1>
           </div>
-      </main>
+        </main>
     </>
   );
 };
