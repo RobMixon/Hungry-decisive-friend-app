@@ -1,0 +1,32 @@
+small {
+    font-size: 75%;
+  }
+  
+  header {
+    background-color: white;
+    width: 100%;
+  }
+
+  nav .container {
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  
+  nav .container li {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    box-sizing: border-box;
+    background-color: white;
+    list-style-type: none;
+  }
+  
+  .nav-link {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+  }
