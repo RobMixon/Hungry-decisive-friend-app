@@ -52,30 +52,3 @@ img {
 .section-content {
   padding: 1.4em;
 }
-
-.container-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.mainFlex {
-  display: flex;
-  justify-content: center;
-}
-
-.mainFlex__userCard {
-    width: 15%;
-}
-
-.mainFlex__subpage {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin: 10px 0;
-  padding: 10px 40px;
-}
-
-.mainFlex__friendList {
-  width: 15%;
-}

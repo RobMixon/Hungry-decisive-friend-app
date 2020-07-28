@@ -3,19 +3,15 @@ small {
   }
   
   header {
-    background-color: grey;
-    border: grey solid 3px;
+    background-color: white;
+    width: 100%;
   }
-  
-  .site-title {
-    color: ghostwhite;
-    text-align: center;
-  }
-  
+
   nav .container {
     display: flex;
     padding: 0;
     margin-bottom: 0;
+    width: 100%;
   }
   
   nav .container li {
@@ -25,16 +21,12 @@ small {
     font-size: 1.5em;
     color: white;
     box-sizing: border-box;
-    background-color: grey;
+    background-color: white;
     list-style-type: none;
   }
   
   .nav-link {
-    color: white;
+    color: black;
     text-decoration: underline;
     cursor: pointer;
-  }
-  
-  .nav-link:hover {
-    color: maroon;
   }

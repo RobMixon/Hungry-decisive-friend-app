@@ -3,9 +3,12 @@ import { Link, Redirect } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = props => {
+
+
+
     const handleLogout = () => {
       props.clearUser()
-      return <Redirect to ="/"></Redirect>
+    window.location.reload(false);
     }
 
 
@@ -14,7 +17,7 @@ const NavBar = props => {
         <nav>
           <ul className="container">
             <li>
-              <Link className="nav-link"  to="/"> Home </Link>
+              <Link className="nav-link"  to="/search"> Search </Link>
             </li>
             {props.hasUser
             ? <li>
