@@ -6,6 +6,8 @@ import Home from "./home/Home";
 //login imports
 import Login from "./auth/Login";
 import Register from "./auth/Registration";
+//search imports
+import SearchList from './search/SearchList'
 
 const ApplicationViews = (props) => {
     const hasUser = props.hasUser;
@@ -29,6 +31,15 @@ const ApplicationViews = (props) => {
             return <Register setUser={setUser} {...props} />
         }} />
          {/* search routes */}
+         <Route
+          exact path="/search"
+          render={props => {
+            if (hasUser) {
+              return <SearchList {...props} hasUser={hasUser} setUser={setUser} />
+            } else {
+              return <Redirect to="/login" />  
+            }
+          }} />
 
 
 
