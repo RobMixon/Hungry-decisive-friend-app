@@ -40,6 +40,15 @@ const ApplicationViews = (props) => {
               return <Redirect to="/login" />  
             }
           }} />
+         <Route
+          exact path="/search/details"
+          render={props => {
+            if (hasUser) {
+              return <SearchList {...props} hasUser={hasUser} setUser={setUser} />
+            } else {
+              return <Redirect to="/login" />  
+            }
+          }} />
 
 
 

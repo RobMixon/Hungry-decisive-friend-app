@@ -1,12 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import SearchCard from './SearchCard';
 import SearchManager from "../modules/SearchManager";
 import UserCard from "../auth/UserCard";
+import SearchCard from "./SearchCard";
 
 
 const SearchList = (props) => {
-
     const [search, setSearch] = useState([]);
+
+    const getResults = () => {
+        return SearchManager.getSearchData()
+        .then(results => results.json())
+        .then(json => setSearch(json.results))
+        // .then(dataFromAPI => {
+        //     setSearch(dataFromAPI)
+        // });
+    };
+
+    useEffect(() => {
+        getResults();
+        console.log(getResults())
+      }, []);
 
   return (
     <>
@@ -14,22 +27,11 @@ const SearchList = (props) => {
       <section className="mainFlex__userCard">
         <UserCard />
       </section>
-      <section className="mainFlex__subpage">
-        <div className="postArticle__button">
-          <button type="button"
-              className="wideBlueBtn"
-              onClick={() => {props.history.push("/articles/new")}}>
-              Post New Article
-          </button>
-        </div>
-        <div className="articleContainer-cards">
-          {search.map(search => 
-            <SearchCard 
-              key={article.id} 
-              article={article}
-              deleteArticle={deleteArticle} 
-              {...props} />)}
-        </div>
+      <section className="mainFlex__subpage"> 
+        {search.map(results =>
+        <SearchCard key={results.id} results={results} {...props} />
+        )}
+        
       </section>
     </main>
     </>
