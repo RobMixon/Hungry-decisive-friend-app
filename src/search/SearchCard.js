@@ -4,7 +4,13 @@ const SearchCard = props => {
     return (
         <div className="card">
              <div className="card-content">
-                 <p>{props.results.name}</p>
+             
+                 <p>{props.search.name}</p>
+                 <p>{props.search.icon}</p>
+                 <p>{props.search.opening_hours.open_now}</p>
+                 <p>{props.search.place_id}</p>
+                 <p>{props.search.rating}</p>
+                 <p>{props.search.price_level}</p>
              </div>
       </div>
     )
