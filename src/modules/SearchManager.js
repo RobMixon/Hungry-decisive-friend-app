@@ -8,8 +8,8 @@ export default {
         .then(results => results.json())
 
     },
-    getRandomResult() {
-        return fetch(`${api}&type=restaurant&key=${Keys}`)
+    getRandomResult(destination, radius) {
+        return fetch(`${api}${destination}&type=restaurant&radius=${radius}&key=${Keys}`)
         .then(results => results.json())
         // .then(json => {
         //     const randomIndex = Math.floor(Math.random()* json.results.length);
