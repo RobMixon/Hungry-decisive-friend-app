@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SearchCard = props => {
-console.log(props.search.photos[0].html_attributions[0])
+console.log(props.search)
 
     return (
         <div className="card">
@@ -12,7 +12,7 @@ console.log(props.search.photos[0].html_attributions[0])
                  <p>Price Level: {props.search.price_level} </p> : <p>Price Level: Unknown</p>
                  }
                  <button type="button" onClick={() => 
-                props.history.push(`/animals/${props.search.place_id}/edit`)}> 
+                props.history.push(`/search/${props.search.place_id}`)}> 
                 More Details </button>
              </div>
       </div>

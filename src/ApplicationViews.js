@@ -7,7 +7,8 @@ import Home from "./home/Home";
 import Login from "./auth/Login";
 import Register from "./auth/Registration";
 //search imports
-import SearchList from './search/SearchList'
+import SearchList from './search/SearchList';
+import SearchDetail from './search/SearchDetail';
 
 const ApplicationViews = (props) => {
     const hasUser = props.hasUser;
@@ -40,15 +41,15 @@ const ApplicationViews = (props) => {
               return <Redirect to="/login" />  
             }
           }} />
-         <Route
-          exact path="/search/details"
-          render={props => {
-            if (hasUser) {
-              return <SearchList {...props} hasUser={hasUser} setUser={setUser} />
-            } else {
-              return <Redirect to="/login" />  
-            }
-          }} />
+             <Route path="/search/:place_id" render={(props) => {
+          // Pass the animalId to the AnimalDetailComponent
+          return (
+          <SearchDetail 
+            place_id={parseInt(props.match.params.place_id)}
+            {...props}
+          />
+          )
+        }} />
 
 
 
