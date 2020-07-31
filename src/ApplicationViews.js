@@ -45,7 +45,7 @@ const ApplicationViews = (props) => {
           // Pass the animalId to the AnimalDetailComponent
           return (
           <SearchDetail 
-            place_id={parseInt(props.match.params.place_id)}
+            place_id={props.match.params.place_id}
             {...props}
           />
           )
