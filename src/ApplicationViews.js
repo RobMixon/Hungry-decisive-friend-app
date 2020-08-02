@@ -9,6 +9,8 @@ import Register from "./auth/Registration";
 //search imports
 import SearchList from './search/SearchList';
 import SearchDetail from './search/SearchDetail';
+// saved imports
+import SavedList from './'
 
 const ApplicationViews = (props) => {
     const hasUser = props.hasUser;
@@ -54,7 +56,15 @@ const ApplicationViews = (props) => {
 
 
           {/* saved searches routes */}
-        
+          <Route
+          exact path="/saved"
+          render={props => {
+            if (hasUser) {
+              return <SavedList {...props} hasUser={hasUser} setUser={setUser} />
+            } else {
+              return <Redirect to="/login" />  
+            }
+          }} />
         </>
     )
 }
