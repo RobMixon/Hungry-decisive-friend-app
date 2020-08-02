@@ -6,6 +6,11 @@ import Home from "./home/Home";
 //login imports
 import Login from "./auth/Login";
 import Register from "./auth/Registration";
+//search imports
+import SearchList from './search/SearchList';
+import SearchDetail from './search/SearchDetail';
+// saved imports
+import SavedList from './'
 
 const ApplicationViews = (props) => {
     const hasUser = props.hasUser;
@@ -29,11 +34,37 @@ const ApplicationViews = (props) => {
             return <Register setUser={setUser} {...props} />
         }} />
          {/* search routes */}
+         <Route
+          exact path="/search"
+          render={props => {
+            if (hasUser) {
+              return <SearchList {...props} hasUser={hasUser} setUser={setUser} />
+            } else {
+              return <Redirect to="/login" />  
+            }
+          }} />
+
+             <Route path="/search/:place_id" render={(props) => {
+               if(hasUser) {
+          return (
+          <SearchDetail place_id={props.match.params.place_id} {...props}/>
+          )} else {
+            return <Redirect to="/login" />  
+          }
+        }} />
 
 
 
           {/* saved searches routes */}
-        
+          <Route
+          exact path="/saved"
+          render={props => {
+            if (hasUser) {
+              return <SavedList {...props} hasUser={hasUser} setUser={setUser} />
+            } else {
+              return <Redirect to="/login" />  
+            }
+          }} />
         </>
     )
 }

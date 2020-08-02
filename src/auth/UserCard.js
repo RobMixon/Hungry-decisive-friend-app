@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import NavBar from "../nav/NavBar";
-import { Link, Redirect } from "react-router-dom";
+import {Redirect } from "react-router-dom";
 
 
-const UserCard = props => {
+const UserCard = () => {
   
   // const isAuthenticated = () => sessionStorage.getItem("user") !== null;
   const sessionUser = JSON.parse(sessionStorage.getItem("user"))
