@@ -1,7 +1,6 @@
 import React from 'react';
 
 const SearchCard = props => {
-console.log(props.search.place_id)
 
     return (
         <div className="card">

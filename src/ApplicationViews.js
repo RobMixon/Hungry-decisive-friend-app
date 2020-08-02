@@ -41,14 +41,14 @@ const ApplicationViews = (props) => {
               return <Redirect to="/login" />  
             }
           }} />
+
              <Route path="/search/:place_id" render={(props) => {
-          // Pass the animalId to the AnimalDetailComponent
+               if(hasUser) {
           return (
-          <SearchDetail 
-            place_id={props.match.params.place_id}
-            {...props}
-          />
-          )
+          <SearchDetail place_id={props.match.params.place_id} {...props}/>
+          )} else {
+            return <Redirect to="/login" />  
+          }
         }} />
 
 

@@ -8,7 +8,8 @@ import SearchCard from "./SearchCard";
 const SearchList = (props) => {
     const [search, setSearch] = useState({});
 
-    const getResults = () => {
+    const getResults = evt => {
+      evt.preventDefault()
         let destination = document.querySelector("#destination").value;
         let radius = (document.querySelector("#radius").value) ;
         if(destination === ""||radius === "") {
@@ -16,7 +17,6 @@ const SearchList = (props) => {
         } else {
         return SearchManager.getRandomResult(destination, radius)
         .then(json => {
-            console.log(json.results)
             const randomIndex = Math.floor(Math.random()* json.results.length);
             const randomResult = json.results[randomIndex];
             console.log(randomResult)
@@ -59,7 +59,7 @@ const SearchList = (props) => {
       </form>
         </div>
         <div className="results">
-        {(search.id) ?
+        {(search.name) ?
         <SearchCard search={search} {...props} /> : 
         null}
         </div>
