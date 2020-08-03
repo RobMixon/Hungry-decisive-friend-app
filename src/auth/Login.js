@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import LoginManager from "../modules/LoginManager";
 import './Login.css';
 
-let activeSession = {}
-
 const Login = props => {
   const [user, setUser] = useState({email: "", password: ""});
 
@@ -27,7 +25,6 @@ const Login = props => {
           // sessionStorage.removeItem('user');
           sessionStorage.setItem('user', JSON.stringify(user))
           props.setUser(user);
-          activeSession = user;
           props.history.push("/");
         } 
         }

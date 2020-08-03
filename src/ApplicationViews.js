@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-
 //home import
 import Home from "./home/Home";
 //login imports
@@ -10,7 +9,9 @@ import Register from "./auth/Registration";
 import SearchList from './search/SearchList';
 import SearchDetail from './search/SearchDetail';
 // saved imports
-import SavedList from './'
+import SavedList from './saved/SavedList';
+import SavedDetail from './saved/SavedDetail';
+import SavedEditForm from './saved/SavedEditForm';
 
 const ApplicationViews = (props) => {
     const hasUser = props.hasUser;
@@ -44,7 +45,7 @@ const ApplicationViews = (props) => {
             }
           }} />
 
-             <Route path="/search/:place_id" render={(props) => {
+             <Route exact path="/search/:place_id" render={(props) => {
                if(hasUser) {
           return (
           <SearchDetail place_id={props.match.params.place_id} {...props}/>
@@ -52,9 +53,6 @@ const ApplicationViews = (props) => {
             return <Redirect to="/login" />  
           }
         }} />
-
-
-
           {/* saved searches routes */}
           <Route
           exact path="/saved"
@@ -65,6 +63,21 @@ const ApplicationViews = (props) => {
               return <Redirect to="/login" />  
             }
           }} />
+           <Route exact path="/saved/:place_id" render={(props) => {
+               if(hasUser) {
+          return (
+          <SavedDetail place_id={props.match.params.place_id} {...props}/>
+          )} else {
+            return <Redirect to="/login" />  
+          }
+        }} />
+        <Route path="/saved/:restaurantId(\d+)/edit" render={props => {
+          if (hasUser) {
+            return <SavedEditForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
+        }} />
         </>
     )
 }
