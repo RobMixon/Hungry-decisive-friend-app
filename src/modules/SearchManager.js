@@ -21,7 +21,7 @@ export default {
         .then(results => results.json())
     },
     // calls to the JSON server
-    post(newRestaurant) {
+    postRestaurant(newRestaurant) {
         return fetch(`${json}/restaurants`, {
             method: "POST",
             headers: {
@@ -30,10 +30,10 @@ export default {
             body: JSON.stringify(newRestaurant)
         }).then(data => data.json())
     },
-    getAll() {
+    getAllRestaurants() {
         return fetch(`${json}/restaurants`).then(result => result.json())
     },
-    get(id) {
+    getRestaurant(id) {
     return fetch(`${json}/restaurants/${id}`).then(result => result.json())
     },
     delete(id) {
@@ -42,7 +42,7 @@ export default {
     }).then(result => result.json())
     },
     update(editedRestaurant) {
-        return fetch(`${json}/animals/${editedRestaurant.id}`, {
+        return fetch(`${json}/restaurants/${editedRestaurant.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"
