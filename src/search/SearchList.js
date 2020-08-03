@@ -25,6 +25,7 @@ const SearchList = (props) => {
         })}
     }
 
+
   return (
     <>
     <main className="mainFlex">
