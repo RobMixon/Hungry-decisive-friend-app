@@ -1,31 +1,38 @@
 {
-  {
-    "users": [
-      {
-        "email": "mixonroberth@gmail.com",
-        "password": "123",
-        "id": 1
-      },
-      {
-        "email": "user@gmail.com",
-        "password": "123",
-        "id": 2
-      }
-    ],
-    "restaurants": [
-      {
-        "name": "Fat Boys BBQ",
-        "place_id": "ChIJ38wK0rxtZIgRGz709bHY2zc",
-        "user_id": 1,
-        "comment": "Best bbq in town!",
-        "id": 4
-      },
-      {
-        "name": "ExoTikka Indian Cuisine",
-        "place_id": "ChIJFdlytExtZIgRL_MVLrWCjOE",
-        "user_id": 1,
-        "comment": "pretty good",
-        "id": 5
-      }
-    ]
-  }
+  "users": [
+    {
+      "email": "mixonroberth@gmail.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "email": "user@gmail.com",
+      "password": "123",
+      "id": 2
+    }
+  ],
+  "restaurants": [
+
+    {
+      "name": "Fat Boys BBQ",
+      "place_id": "ChIJ38wK0rxtZIgRGz709bHY2zc",
+      "user_id": 1,
+      "comment": "Best bbq in town!",
+      "id": 4
+    },
+    {
+      "name": "ExoTikka Indian Cuisine",
+      "place_id": "ChIJFdlytExtZIgRL_MVLrWCjOE",
+      "user_id": 1,
+      "comment": "pretty good",
+      "id": 5
+    },
+    {
+      "name": "Starwood Pizza",
+      "place_id": "ChIJhV_bTptyZIgRZkev9xaxIEc",
+      "user_id": 1,
+      "comment": "Best food ever",
+      "id": 6
+    }
+  ]
+}
