@@ -6,26 +6,25 @@ import SavedCard from "./SavedCard";
 
 
 const SavedList = (props) => {
-    const [saved, setSaved] = useState([]);
+  const [saved, setSaved] = useState([]);
 
-const getSaved = () => {
-
+  const getSaved = () => {
     return SearchManager.getAllRestaurants().then(response => {
         let user=sessionStorage.getItem('user');
         let user_id=JSON.parse(user).id
         console.log(user_id)
         setSaved(response)
         console.log(response)
-  })
-}
-const deleteRestaurant = id => {
+    })
+  }
+  const deleteRestaurant = id => {
     SearchManager.delete(id)
-      .then(() => getSaved());
+    .then(() => getSaved());
   };
 
-    useEffect(() => {
-        getSaved()
-      }, []);
+  useEffect(() => {
+    getSaved()
+  }, []);
 
   return (
     <>
@@ -35,13 +34,17 @@ const deleteRestaurant = id => {
       </section>
       <section className="mainFlex__subpage"> 
         <div className="results">
-            {saved.map(saved =>
-            <SavedCard key={saved.id} saved={saved} deleteRestaurant={deleteRestaurant} {...props}/>
-            )}
+          {saved.map(saved =>
+          <SavedCard 
+          key={saved.id} 
+          saved={saved} 
+          deleteRestaurant={deleteRestaurant} 
+          {...props}/>
+          )}
         </div>
       </section>
     </main>
-    </>
+  </>
   );
 };
 

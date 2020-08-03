@@ -4,9 +4,7 @@ import NavBar from "./nav/NavBar";
 import "./Friend.css";
 
 const Friend = () => {
-
   const isAuthenticated =()=> sessionStorage.getItem("user") !==null;
-
   const[hasUser, setHasUser] = useState(isAuthenticated());
 
   const setUser=user=>{
@@ -14,11 +12,11 @@ const Friend = () => {
     setHasUser(isAuthenticated());
   }
 
-    return (
-        <>
-            <ApplicationViews hasUser={hasUser} setUser={setUser} />
-        </>
-      );
+  return (
+    <>
+      <ApplicationViews hasUser={hasUser} setUser={setUser} />
+    </>
+  );
 }
 
 export default Friend;

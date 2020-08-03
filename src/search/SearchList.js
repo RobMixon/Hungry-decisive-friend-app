@@ -3,28 +3,24 @@ import SearchManager from "../modules/SearchManager";
 import UserCard from "../auth/UserCard";
 import SearchCard from "./SearchCard";
 
-
-
 const SearchList = (props) => {
-    const [search, setSearch] = useState({});
+  const [search, setSearch] = useState({});
 
-    const getResults = evt => {
-      evt.preventDefault()
-        let destination = document.querySelector("#destination").value;
-        let radius = (document.querySelector("#radius").value) ;
-        if(destination === ""||radius === "") {
-            window.alert("Please fill out current Location and Search Radius")
-        } else {
-        return SearchManager.getRandomResult(destination, radius)
-        .then(json => {
-            const randomIndex = Math.floor(Math.random()* json.results.length);
-            const randomResult = json.results[randomIndex];
-            console.log(randomResult)
-            setSearch(randomResult)
-        
-        })}
-    }
-
+  const getResults = evt => {
+    evt.preventDefault()
+    let destination = document.querySelector("#destination").value;
+    let radius = (document.querySelector("#radius").value) ;
+    if(destination === ""||radius === "") {
+      window.alert("Please fill out current Location and Search Radius")
+    } else {
+    return SearchManager.getRandomResult(destination, radius)
+    .then(json => {
+      const randomIndex = Math.floor(Math.random()* json.results.length);
+      const randomResult = json.results[randomIndex];
+      console.log(randomResult)
+      setSearch(randomResult)
+    })}
+  }
 
   return (
     <>

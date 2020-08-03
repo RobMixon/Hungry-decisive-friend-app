@@ -4,13 +4,10 @@ import "./NavBar.css";
 
 const NavBar = props => {
 
-
-
     const handleLogout = () => {
       props.clearUser()
-    window.location.reload(false);
+      window.location.reload(false);
     }
-
 
     return (
       <header>
@@ -20,18 +17,17 @@ const NavBar = props => {
               <Link className="nav-link"  to="/search"> Search </Link>
             </li>
             {props.hasUser
-            ? <li>
-                <Link className="nav-link" to="/saved"> Saved </Link>
-              </li>
+            ?<li>
+              <Link className="nav-link" to="/saved"> Saved </Link>
+            </li>
             : null}
             {props.hasUser
-              ? <li>
-                  <span className="nav-link" onClick={handleLogout}>Logout</span>
-                </li>
-                :<li>
-                  <Link className="nav-link" to="/login"> Login </Link>
-                </li>
-              }
+            ? <li>
+              <span className="nav-link" onClick={handleLogout}>Logout</span>
+            </li>
+            :<li>
+              <Link className="nav-link" to="/login"> Login </Link>
+            </li>}
           </ul>
         </nav>
       </header>

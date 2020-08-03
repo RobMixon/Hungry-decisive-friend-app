@@ -33,50 +33,64 @@ const constructNewUser = evt => {
 };
 
   return (
-        <div className="loginBox">
-          <div className="loginLogo">
-            <img src="./images/logo.png" alt="logo" />
-          </div>
-
-
-          <form>
-
-            <div className="form-input">
-              <input className="inputField" type="text" required onChange={handleFieldChange} id="email"/>
-              <span className="focus-inputField" data-placeholder="Email"></span>
-            </div>
-
-            <div className="form-input">
-              <input className="inputField" type="password" required onChange={handleFieldChange} id="password"/>
-              <span className="focus-inputField" data-placeholder="Password"></span>
-            </div>
-
-            <div className="form-input">
-              <input className="inputField" type="password" id="password2"/>
-              <span className="focus-inputField" data-placeholder="Password Confirm"></span>
-            </div>
-
-            <div className="container-login-form-btn">
-              <div className="wrap-login-form-btn">
-                <div className="login-form-bgbtn"></div>
-                <button type="submit" className="login-form-btn" disabled={isLoading}
-                onClick={constructNewUser}>
-                  Create Account
-                </button>
-              </div>
-            </div>
-
-            <div className="registerAcct">
-              <span className="registerAcct__text">
-                Already have an account?
-              </span>
-                <Link to="/login">
-                  Sign In
-                </Link>
-            </div>
-          </form>
+    <div className="loginBox">
+      <div className="loginLogo">
+        <img src="./images/logo.png" alt="logo"/>
+      </div>
+      <form>
+        <div className="form-input">
+          <input 
+            className="inputField" 
+            type="text" 
+            required onChange={handleFieldChange} 
+            id="email"/>
+          <span 
+            className="focus-inputField" 
+            data-placeholder="Email">
+          </span>
         </div>
-
+        <div className="form-input">
+          <input 
+            className="inputField" 
+            type="password" 
+            required onChange={handleFieldChange} 
+            id="password"/>
+          <span 
+            className="focus-inputField" 
+            data-placeholder="Password">
+          </span>
+        </div>
+        <div className="form-input">
+          <input 
+            className="inputField" 
+            type="password" 
+            id="password2"/>
+          <span className="focus-inputField" 
+            data-placeholder="Password Confirm">
+          </span>
+        </div>
+        <div className="container-login-form-btn">
+          <div className="wrap-login-form-btn">
+            <div className="login-form-bgbtn"></div>
+            <button 
+              type="submit" 
+              className="login-form-btn" 
+              disabled={isLoading}
+              onClick={constructNewUser}>
+              Create Account
+            </button>
+          </div>
+        </div>
+        <div className="registerAcct">
+          <span className="registerAcct__text">
+            Already have an account?
+          </span>
+            <Link to="/login">
+              Sign In
+            </Link>
+        </div>
+      </form>
+    </div>
   );
 };
 
