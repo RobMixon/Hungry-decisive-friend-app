@@ -10,6 +10,12 @@ const SavedCard = props => {
                  <button type="button" onClick={() => 
                 props.history.push(`/saved/${props.saved.place_id}`)}> 
                 More Details </button>
+                {props.deleteRestaurant && 
+        <button type="button" onClick={() => props.deleteRestaurant(props.saved.id)}>Delete From Saved</button>}
+        <button type="button"
+          onClick={() => props.history.push(`/saved/${props.saved.id}/edit`)}>
+          Edit comment
+        </button>
              </div>
       </div>
 

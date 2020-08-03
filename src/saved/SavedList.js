@@ -18,6 +18,11 @@ const getSaved = () => {
         console.log(response)
   })
 }
+const deleteRestaurant = id => {
+    SearchManager.delete(id)
+      .then(() => getSaved());
+  };
+
     useEffect(() => {
         getSaved()
       }, []);
@@ -31,7 +36,7 @@ const getSaved = () => {
       <section className="mainFlex__subpage"> 
         <div className="results">
             {saved.map(saved =>
-            <SavedCard key={saved.id} saved={saved} {...props}/>
+            <SavedCard key={saved.id} saved={saved} deleteRestaurant={deleteRestaurant} {...props}/>
             )}
         </div>
       </section>
