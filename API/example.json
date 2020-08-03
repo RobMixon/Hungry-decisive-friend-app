@@ -14,16 +14,6 @@
     ],
     "restaurants": [
       {
-        "id": 2,
-        "name": "Waffle House",
-        "comment": "groovy"
-      },
-      {
-        "id": 3,
-        "name": "Starwood Pizza",
-        "comment": "Super hot spicy pizza"
-      },
-      {
         "name": "Fat Boys BBQ",
         "place_id": "ChIJ38wK0rxtZIgRGz709bHY2zc",
         "user_id": 1,

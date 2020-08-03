@@ -18,9 +18,11 @@ const SavedEditForm = props => {
         evt.preventDefault()
         setIsLoading(true);
         const editedRestaurant = {
-            id: saved.id,
-            name: saved.name,
-            comment: saved.comment
+            name:saved.name,
+            place_id:saved.place_id,
+            user_id:saved.user_id,
+            comment: saved.comment,
+            id: saved.id
           };
     SearchManager.update(editedRestaurant)
     .then(() => props.history.push("/saved"))
