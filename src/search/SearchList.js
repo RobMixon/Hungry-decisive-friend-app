@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SearchManager from "../modules/SearchManager";
 import UserCard from "../auth/UserCard";
 import SearchCard from "./SearchCard";
+import './Search.css';
 
 const SearchList = (props) => {
   const [search, setSearch] = useState({});
@@ -10,7 +11,7 @@ const SearchList = (props) => {
     evt.preventDefault()
     let destination = document.querySelector("#destination").value;
     let radius = (document.querySelector("#radius").value) ;
-    if(destination === ""||radius === "") {
+    if(destination === "") {
       window.alert("Please fill out current Location and Search Radius")
     } else {
     return SearchManager.getRandomResult(destination, radius)
@@ -24,37 +25,37 @@ const SearchList = (props) => {
 
   return (
     <>
-    <main className="mainFlex">
-      <section className="mainFlex__userCard">
+    <main className="searchFlex">
+      <section className="searchFlex__userCard">
         <UserCard />
       </section>
-      <section className="mainFlex__subpage"> 
-        <div className="searchField">
+      <section className="searchFlex__subpage"> 
+
         <form>
-        <fieldset>
+        <fieldset className="search_fieldset">
           <div className="formgrid">
+          Current Location: 
             <input
               type="text"
               id="destination"
-              placeholder="Current Location"
+              placeholder="Zipcode or Address"
             />
-            <label htmlFor="destination"></label>
+            Radius: 
             <input
               type="text"
               id="radius"
-              placeholder="Radius"
+              placeholder="Meters or Leave blank"
             />
-            <label htmlFor="radius"></label>
           </div>
-          <div className="searchButton">
-            <button
+          <div className="searchButton_box">
+            <button 
+              className="searchButton"
               type="button"
               onClick={getResults}
             >Get a Restaurant</button>
           </div>
         </fieldset>
       </form>
-        </div>
         <div className="results">
         {(search.name) ?
         <SearchCard search={search} {...props} /> : 

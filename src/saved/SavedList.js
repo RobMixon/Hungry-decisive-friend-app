@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SearchManager from "../modules/SearchManager";
 import UserCard from "../auth/UserCard";
 import SavedCard from "./SavedCard";
+import './Saved.css';
 
 
 const SavedList = (props) => {
@@ -28,9 +29,9 @@ const SavedList = (props) => {
   return (
     <>
     <main className="savedList">
-      <header className="savedList__userCard">
+      <section className="savedFlex__userCard">
         <UserCard />
-      </header>
+      </section>
       <section className="savedList__subpage"> 
         <div className="results">
           {saved.map(saved =>

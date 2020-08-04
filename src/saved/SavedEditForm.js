@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import SearchManager from "../modules/SearchManager";
 import UserCard from "../auth/UserCard";
+import './Saved.css';
 
 const SavedEditForm = props => {
   const [saved, setSaved] = useState({name:"",comment:""});
@@ -37,20 +38,17 @@ const SavedEditForm = props => {
   }, []);
 
   return (
-    <div className="card">
-      <div className="card-content">
+    <div className="savedEdit">
+      <section className="savedFlex__userCard">
         <UserCard />
-      </div>
-      <h1>
-        {saved.name}
-      </h1>
+      </section>
+      <div className="savedEdit_content">
+      <h1>{saved.name}</h1>
       <form>
-        <fieldset>
-          <div className="formgrid">
+        <fieldset className="saved_fieldset">
             <input
               type="text"
-              required
-              className="form-control"
+              className="savedEdit_form"
               onChange={handleFieldChange}
               id="comment"
               value={saved.comment}/>
@@ -58,12 +56,12 @@ const SavedEditForm = props => {
             <button
               type="button" disabled={isLoading}
               onClick={updateExistingRestaurant}
-              className="btn btn-primary">
-              Submit
+              className="editForm_button">
+              Submit Changes?
             </button>
-          </div>
         </fieldset>
       </form>
+      </div>
     </div>
   )
 }

@@ -3,7 +3,7 @@ small {
   }
   
   header {
-    background-color: white;
+    background-color: black;
     width: 100%;
   }
 
@@ -19,14 +19,14 @@ small {
     padding: 10px;
     text-align: center;
     font-size: 1.5em;
-    color: white;
+    color: black;
     box-sizing: border-box;
-    background-color: white;
+    background-color: black;
     list-style-type: none;
   }
   
   .nav-link {
-    color: black;
+    color: white;
     text-decoration: underline;
     cursor: pointer;
   }

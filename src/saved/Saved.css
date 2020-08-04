@@ -1,0 +1,40 @@
+/* saved list css */
+.savedFlex__userCard {
+    border: black 1px solid;
+    background-color: black;
+}
+
+.saved_button {
+    margin-right: 1px;
+    background-color: transparent;
+    border: black 1px solid;
+}
+
+/* saved edit form css */
+
+.savedEdit_content {
+    margin-left: 5px;
+}
+/* saved details */
+
+.results {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.saved_fieldset {
+    border: solid white 1px;
+    padding: 0%;
+    display: flex;
+}
+
+.savedEdit_form {
+    width: 95%;
+    border: 1px white solid;
+}
+
+.editForm_button {
+    margin-top: 5%;
+    background-color: transparent;
+    border: black 1px solid;
+}

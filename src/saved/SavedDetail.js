@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchManager from "../modules/SearchManager";
 import UserCard from '../auth/UserCard';
+import './Saved.css';
 
 const SavedDetail = props => {
   const [result, setResult] = useState({name:"", formatted_address:"", rating:"",formatted_phone_number:"",website:"",place_id:"", comment:""})
@@ -17,9 +18,9 @@ useEffect(() => {
 
 return (
   <div className="card">
-    <div className="card-content">
+    <section className="savedFlex__userCard">
       <UserCard />
-    </div>
+    </section>
     <div className="results" value={result.place_id}>
       <h1>{result.name}</h1>
       <p>Rating:{result.rating}</p>

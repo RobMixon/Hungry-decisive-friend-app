@@ -1,0 +1,58 @@
+/* Search List CSS */
+.searchFlex__userCard {
+    border: black 1px solid;
+    background-color: black;
+}
+
+.formgrid {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchButton_box {
+    margin-top: 5%;
+}
+
+.searchButton {
+    margin-top: 5%;
+    background-color: transparent;
+    border: 1px black solid;
+}
+
+.search_fieldset {
+    border: white 1px solid;
+}
+
+.results {
+    margin-right: 10px;
+}
+/* Search card css */
+.card-content {
+    margin: 5%;
+border-top: black 1px solid;
+}
+
+
+.searchDetail_button {
+    background-color: transparent;
+    border: 1px black solid;
+}
+
+/* Search details css */
+.searchDetail_results {
+    padding-left: 5px;
+}
+
+.save_results {
+    padding-left: 5px;
+}
+
+.saveResult_button {
+    background-color: transparent;
+    border: 1px black solid;
+    margin-top: 5%;
+}
+
+.comment_box {
+    border: 1px black solid;
+}
