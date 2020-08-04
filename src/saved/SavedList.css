@@ -1,0 +1,20 @@
+.savedList_userCard {
+    /* border: black solid 3px; */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card-content {
+    /* border: red solid 3px; */
+
+}
+
+.navBar {
+    background-color: white;
+}
+
+.mainFlex_userCard {
+    background-color: white;
+
+}

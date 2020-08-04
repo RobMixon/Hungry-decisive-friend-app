@@ -4,7 +4,6 @@ import UserCard from "../auth/UserCard";
 import SavedCard from "./SavedCard";
 
 
-
 const SavedList = (props) => {
   const [saved, setSaved] = useState([]);
 
@@ -28,11 +27,11 @@ const SavedList = (props) => {
 
   return (
     <>
-    <main className="mainFlex">
-      <section className="mainFlex__userCard">
+    <main className="savedList">
+      <header className="savedList__userCard">
         <UserCard />
-      </section>
-      <section className="mainFlex__subpage"> 
+      </header>
+      <section className="savedList__subpage"> 
         <div className="results">
           {saved.map(saved =>
           <SavedCard 
