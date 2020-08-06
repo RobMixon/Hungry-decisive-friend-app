@@ -4,7 +4,7 @@ import UserCard from "../auth/UserCard";
 import SearchCard from "./SearchCard";
 import './Search.css';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import Dropdown from 'react-bootstrap/Dropdown'
+import Dropdown from 'react-bootstrap/Dropdown';
 
 
 const SearchList = (props) => {
@@ -29,7 +29,6 @@ const SearchList = (props) => {
       const randomResult = json.results[randomIndex];
       console.log(randomResult)
       setSearch(randomResult)
-      console.log(type)
     })}
   }
 
@@ -56,24 +55,28 @@ const SearchList = (props) => {
               id="radius"
               placeholder="Meters or Leave blank"
             />
+            Type:
             <DropdownButton
               title="Type of Place"
               id="dropdown-menu"
+              className="dropDown_button"
               onSelect={handleSelect}
                 >
-              <Dropdown.Item eventKey="restaurant">Restaurant</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item eventKey="bar">Bar</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item eventKey="book_store">Book Store</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item eventKey="cafe">Cafe</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item eventKey="library">library</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item eventKey="museum">Museum</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item eventKey="tourist_attraction">Tourist Attraction</Dropdown.Item>
+              <div className="dropDown_box">
+                <Dropdown.Item className="dropDown_item" eventKey="restaurant">Restaurant</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item className="dropDown_item" eventKey="bar">Bar</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item className="dropDown_item" eventKey="book_store">Book Store</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item className="dropDown_item" eventKey="cafe">Cafe</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item className="dropDown_item" eventKey="library">library</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item className="dropDown_item" eventKey="museum">Museum</Dropdown.Item>
+                <Dropdown.Divider />
+                <Dropdown.Item className="dropDown_item" eventKey="tourist_attraction">Tourist Attraction</Dropdown.Item>
+              </div>
             </DropdownButton>
           </div>
           <div className="searchButton_box">

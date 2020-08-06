@@ -15,22 +15,23 @@ const SavedEditForm = props => {
     setSaved(stateToChange);
   };
 
-  const updateExistingRestaurant = evt => {
+  const updateExistingPlace = evt => {
     evt.preventDefault()
     setIsLoading(true);
-    const editedRestaurant = {
+    const editedPlace = {
         name:saved.name,
         place_id:saved.place_id,
         user_id:saved.user_id,
         comment: saved.comment,
         id: saved.id
       };
-    SearchManager.update(editedRestaurant)
+    SearchManager.update(editedPlace)
     .then(() => props.history.push("/saved"))
   }
 
   useEffect(() => {
-    SearchManager.getRestaurant(props.match.params.restaurantId)
+    console.log(props,"props")
+    SearchManager.getPlace(props.match.params.placeId)
     .then(result => {
       setSaved(result)
       setIsLoading(false)
@@ -46,19 +47,20 @@ const SavedEditForm = props => {
       <h1>{saved.name}</h1>
       <form>
         <fieldset className="saved_fieldset">
-            <input
-              type="text"
-              className="savedEdit_form"
-              onChange={handleFieldChange}
-              id="comment"
-              value={saved.comment}/>
-            <label htmlFor="name"></label>
-            <button
-              type="button" disabled={isLoading}
-              onClick={updateExistingRestaurant}
-              className="editForm_button">
-              Submit Changes?
-            </button>
+        Comment:
+          <input
+            type="text"
+            className="savedEdit_form"
+            onChange={handleFieldChange}
+            id="comment"
+            value={saved.comment}/>
+          <label htmlFor="name"></label>
+          <button
+            type="button" disabled={isLoading}
+            onClick={updateExistingPlace}
+            className="editForm_button">
+            Submit Changes?
+          </button>
         </fieldset>
       </form>
       </div>

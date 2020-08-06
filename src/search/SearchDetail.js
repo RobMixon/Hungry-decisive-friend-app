@@ -28,12 +28,12 @@ const SearchDetail = props => {
     setSearch(stateToChange);
   };
 
-  const constructNewRestaurant = evt => {
+  const constructNewPlace = evt => {
     evt.preventDefault();
     setIsLoading(true);
 
     // Create the restaurant and redirect user to saved  page
-    SearchManager.postRestaurant(search)
+    SearchManager.postPlace(search)
       .then(() => props.history.push("/saved"));
   };
 
@@ -67,7 +67,7 @@ const SearchDetail = props => {
         className="saveResult_button"
         type="button" 
         disabled={isLoading}
-        onClick={constructNewRestaurant}>
+        onClick={constructNewPlace}>
         Love it? Save it!
       </button>
       </div>

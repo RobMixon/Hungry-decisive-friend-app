@@ -78,7 +78,7 @@ const ApplicationViews = (props) => {
         }
       }} />
       <Route 
-      path="/saved/:restaurantId(\d+)/edit"
+      path="/saved/:placeId(\d+)/edit"
       render={props => {
         if (hasUser) {
           return <SavedEditForm {...props} />

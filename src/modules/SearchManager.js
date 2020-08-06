@@ -26,39 +26,39 @@ export default {
         .catch(err=>console.log("err",err))
     },
     // calls to the JSON server
-    postRestaurant(newRestaurant) {
-        return fetch(`${json}/restaurants`, {
+    postPlace(newPlace) {
+        return fetch(`${json}/places`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(newRestaurant)
+            body: JSON.stringify(newPlace)
         }).then(data => data.json())
         .catch(err=>console.log("err",err))
     },
-    getAllRestaurants() {
-        return fetch(`${json}/restaurants`)
+    getAllPlaces() {
+        return fetch(`${json}/places`)
         .then(result => result.json())
         .catch(err=>console.log("err",err))
     },
-    getRestaurant(id) {
-        return fetch(`${json}/restaurants/${id}`)
+    getPlace(id) {
+        return fetch(`${json}/places/${id}`)
         .then(result => result.json())
         .catch(err=>console.log("err",err))
     },
     delete(id) {
-        return fetch(`${json}/restaurants/${id}`, {
+        return fetch(`${json}/places/${id}`, {
             method: "DELETE"
         }).then(result => result.json())
         .catch(err=>console.log("err",err))
     },
-    update(editedRestaurant) {
-        return fetch(`${json}/restaurants/${editedRestaurant.id}`, {
+    update(editedPlace) {
+        return fetch(`${json}/places/${editedPlace.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(editedRestaurant)
+          body: JSON.stringify(editedPlace)
         }).then(data => data.json())
         .catch(err=>console.log("err",err))
     }

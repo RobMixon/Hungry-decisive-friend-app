@@ -10,12 +10,15 @@
 }
 
 .searchButton_box {
-    margin-top: 5%;
+    /* display: flex;
+    justify-content: center; */
+    margin-top: 10%;
+
+
 }
 
 .searchButton {
     margin-top: 5%;
-    background-color: transparent;
     border: 1px black solid;
 }
 
@@ -28,13 +31,12 @@
 }
 /* Search card css */
 .card-content {
-    margin: 5%;
+    margin: 5px;
 border-top: black 1px solid;
 }
 
 
 .searchDetail_button {
-    background-color: transparent;
     border: 1px black solid;
 }
 
@@ -48,7 +50,6 @@ border-top: black 1px solid;
 }
 
 .saveResult_button {
-    background-color: transparent;
     border: 1px black solid;
     margin-top: 5%;
 }
@@ -59,3 +60,12 @@ border-top: black 1px solid;
 
 /* dropdown */
 
+.dropDown_item {
+    background-color: white;
+    color: black;
+}
+
+.dropDown_box {
+    padding: 1%;
+    background-color: white;
+}

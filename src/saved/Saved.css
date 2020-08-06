@@ -6,7 +6,6 @@
 
 .saved_button {
     margin-right: 1px;
-    background-color: transparent;
     border: black 1px solid;
 }
 
@@ -30,11 +29,20 @@
 
 .savedEdit_form {
     width: 95%;
-    border: 1px white solid;
+    border: 1px black solid;
 }
 
 .editForm_button {
     margin-top: 5%;
-    background-color: transparent;
     border: black 1px solid;
+}
+
+.savedDropDown_button {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.dropDown_box {
+    padding: 1%;
+    background-color: white;
 }
