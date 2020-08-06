@@ -1,14 +1,9 @@
 {
   "users": [
     {
-      "email": "mixonroberth@gmail.com",
+      "email": "user@gmail.com",
       "password": "123",
       "id": 1
-    },
-    {
-      "email": "mixonroberth@yahoo.com",
-      "password": "123",
-      "id": 2
     }
   ],
   "places": [
@@ -17,42 +12,7 @@
       "place_id": "ChIJ38wK0rxtZIgRGz709bHY2zc",
       "user_id": 1,
       "comment": "Best bbq in town!",
-      "id": 4
-    },
-    {
-      "name": "Starwood Pizza",
-      "place_id": "ChIJhV_bTptyZIgRZkev9xaxIEc",
-      "user_id": 1,
-      "comment": "Best food ever",
-      "id": 6
-    },
-    {
-      "name": "Angelo's Picnic Pizza Italian Restaurant",
-      "place_id": "ChIJ_4vk7rttZIgRgYXnDDQSSfE",
-      "user_id": 1,
-      "comment": "",
-      "id": 8
-    },
-    {
-      "name": "Fat Boys BBQ",
-      "place_id": "ChIJ38wK0rxtZIgRGz709bHY2zc",
-      "user_id": 2,
-      "comment": "122",
-      "id": 9
-    },
-    {
-      "name": "Los Paisanos",
-      "place_id": "ChIJ7w-yGUFuZIgR7rrQpRfCGgw",
-      "user_id": 1,
-      "comment": "",
-      "id": 12
-    },
-    {
-      "name": "Elder's Book Store",
-      "place_id": "ChIJ-djbXmrEJRURdPds32VidPM",
-      "user_id": 1,
-      "comment": "",
-      "id": 13
+      "id": 1
     }
   ]
 }
