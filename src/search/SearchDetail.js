@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SearchManager from "../modules/SearchManager";
 import UserCard from '../auth/UserCard';
+import './Search.css';
 
 // import "./SearchDetail.css";
 
@@ -27,34 +28,35 @@ const SearchDetail = props => {
     setSearch(stateToChange);
   };
 
-  const constructNewRestaurant = evt => {
+  const constructNewPlace = evt => {
     evt.preventDefault();
     setIsLoading(true);
 
     // Create the restaurant and redirect user to saved  page
-    SearchManager.postRestaurant(search)
+    SearchManager.postPlace(search)
       .then(() => props.history.push("/saved"));
   };
 
   return (
-    <div className="card">
-      <div className="card-content">
+    <div className="searchDetail_card">
+      <section className="searchFlex__userCard">
         <UserCard />
-      </div>
-      <div className="results" value={result.place_id}>
+      </section>
+      <div className="searchDetail_results" value={result.place_id}>
           <h1>{result.name}</h1>
-          <p>Rating:{result.rating}</p>
+          <p>Rating: {result.rating}</p>
           <p>{result.formatted_address}</p>
           <p>{result.formatted_phone_number}</p>
           <p>{result.website}</p>
           <form>
             <textarea 
+              className="comment_box"
               rows="4" 
               cols="50" 
               name="comment" 
               form="usrform" 
               id="comment"
-              placeholder="Enter Comments Here"
+              placeholder="What did you think?"
               onChange={handleFieldChange}
               value={search.comment}>
             </textarea>
@@ -62,11 +64,11 @@ const SearchDetail = props => {
       </div>
       <div className="save_results">
       <button 
+        className="saveResult_button"
         type="button" 
-        className="btn" 
         disabled={isLoading}
-        onClick={constructNewRestaurant}>
-        Save Restuarant
+        onClick={constructNewPlace}>
+        Love it? Save it!
       </button>
       </div>
     </div>

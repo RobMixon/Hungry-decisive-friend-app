@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Decisive Friend
 
-## Available Scripts
+Formerly Hungry Decisive Friend, is a react.js application to help you decide on a place to go based off of your filtered selections and location. 
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+```
+Fork the repository over from my github to yours. 
+create a database.json file inside of the API folder.
+Copy example.json over to your newly created database.json.
+Serve the JSON file to terminal 5002
+Open the file in the terminal and run npm start. 
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Usage
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Register an account, login and have fun!
 
-### `npm test`
+## Contributing
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-### `npm run build`
+Please make sure to update tests as appropriate.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Support
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Support can be found by emailing me directly at mixonroberth@gmail.com
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Roadmap
 
-### `npm run eject`
+Soon you will be able to filter by type in the saved section. This will allow those with larger saved databases to filter and minimize the results for faster location of a favorite place. Directions and mapping should be coming shortly after that. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Acknowledgement
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A thank you to the Wonderful and brilliant Brenda Long, Rose Wisotzky and Sage Klein for helping throughout the journey of developing this application and also through the journey of front end web development. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

@@ -11,21 +11,24 @@ const SavedCard = props => {
           {props.saved.comment}
         </p>
         <button 
+          className="saved_button"
           type="button" 
           onClick={() => 
           props.history.push(`/saved/${props.saved.place_id}`)}> 
           More Details 
         </button>
-          {props.deleteRestaurant && 
+          {props.deletePlace && 
         <button 
+          className="saved_button"
           type="button" 
-          onClick={() => props.deleteRestaurant(props.saved.id)}>
-          Delete From Saved
+          onClick={() => props.deletePlace(props.saved.id)}>
+          Delete Place
         </button>}
         <button 
+          className="saved_button"
           type="button"
           onClick={() => props.history.push(`/saved/${props.saved.id}/edit`)}>
-          Edit comment
+          Edit Comment?
         </button>
       </div>
     </div>
