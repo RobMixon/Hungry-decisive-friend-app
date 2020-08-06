@@ -7,10 +7,10 @@ const json="http://localhost:5002"
 
 export default {
     // fetch calls to the google APIs
-    getRandomResult(destination, radius) {
+    getRandomResult(destination, radius, type) {
         return fetch('https://fe-cors-proxy.herokuapp.com',{
             headers:{
-               "Target-URL":`${api}${destination}&type=restaurant&radius=${radius}&key=${Keys}` 
+               "Target-URL":`${api}${destination}&type=${type}&radius=${radius}&key=${Keys}` 
             }
         })
         .then(response=>response.json())

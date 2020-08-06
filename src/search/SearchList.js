@@ -3,23 +3,33 @@ import SearchManager from "../modules/SearchManager";
 import UserCard from "../auth/UserCard";
 import SearchCard from "./SearchCard";
 import './Search.css';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown'
+
 
 const SearchList = (props) => {
   const [search, setSearch] = useState({});
+  const [value,setValue]=useState('');
 
-  const getResults = evt => {
+  const handleSelect=(e)=>{
+    setValue(e)
+  }
+
+  const getResults = (evt, ) => {
     evt.preventDefault()
     let destination = document.querySelector("#destination").value;
-    let radius = (document.querySelector("#radius").value) ;
-    if(destination === "") {
-      window.alert("Please fill out current Location and Search Radius")
+    let radius = (document.querySelector("#radius").value);
+    let type = value;
+    if(destination === ""||type==="") {
+      window.alert("Please fill out current Location and select a Type")
     } else {
-    return SearchManager.getRandomResult(destination, radius)
+    return SearchManager.getRandomResult(destination, radius, type)
     .then(json => {
       const randomIndex = Math.floor(Math.random()* json.results.length);
       const randomResult = json.results[randomIndex];
       console.log(randomResult)
       setSearch(randomResult)
+      console.log(type)
     })}
   }
 
@@ -46,13 +56,32 @@ const SearchList = (props) => {
               id="radius"
               placeholder="Meters or Leave blank"
             />
+            <DropdownButton
+              title="Type of Place"
+              id="dropdown-menu"
+              onSelect={handleSelect}
+                >
+              <Dropdown.Item eventKey="restaurant">Restaurant</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item eventKey="bar">Bar</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item eventKey="book_store">Book Store</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item eventKey="cafe">Cafe</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item eventKey="library">library</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item eventKey="museum">Museum</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item eventKey="tourist_attraction">Tourist Attraction</Dropdown.Item>
+            </DropdownButton>
           </div>
           <div className="searchButton_box">
             <button 
               className="searchButton"
               type="button"
               onClick={getResults}
-            >Get a Restaurant</button>
+            >Get a Random Place!</button>
           </div>
         </fieldset>
       </form>
