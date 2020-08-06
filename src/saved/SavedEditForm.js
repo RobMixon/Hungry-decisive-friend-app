@@ -6,8 +6,6 @@ import './Saved.css';
 const SavedEditForm = props => {
   const [saved, setSaved] = useState({name:"",comment:""});
   const [isLoading, setIsLoading] = useState(false);
-  console.log(props, "props")
-
 
   const handleFieldChange = evt => {
     const stateToChange = { ...saved };
@@ -30,7 +28,6 @@ const SavedEditForm = props => {
   }
 
   useEffect(() => {
-    console.log(props,"props")
     SearchManager.getPlace(props.match.params.placeId)
     .then(result => {
       setSaved(result)

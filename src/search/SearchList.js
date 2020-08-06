@@ -6,7 +6,6 @@ import './Search.css';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-
 const SearchList = (props) => {
   const [search, setSearch] = useState({});
   const [value,setValue]=useState('');
@@ -27,7 +26,6 @@ const SearchList = (props) => {
     .then(json => {
       const randomIndex = Math.floor(Math.random()* json.results.length);
       const randomResult = json.results[randomIndex];
-      console.log(randomResult)
       setSearch(randomResult)
     })}
   }

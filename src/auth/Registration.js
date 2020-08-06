@@ -37,7 +37,6 @@ const constructNewUser = evt => {
   } else if(checkEmail()){
     window.alert("The email already has an account, please sign in to your account")
   } else {
-    console.log(user,info, "it works")
     setIsLoading(true);
     sessionStorage.setItem("user", JSON.stringify(info))
     props.setUser(info)
