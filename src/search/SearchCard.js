@@ -12,7 +12,7 @@ const SearchCard = props => {
                 <p className="searchCard_name">
                     Rating: {props.search.rating}
                 </p>
-                    {(props.search.price_level) ? <p>Price Level: {props.search.price_level} </p> : <p>Price Level: Unknown</p>}
+                    {(props.search.price_level) ? <p>Price Level (1): {props.search.price_level} </p> : <p>Price Level: Unknown</p>}
                 <button 
                     className="searchDetail_button"
                     type="button" 

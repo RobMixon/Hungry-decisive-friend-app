@@ -12,9 +12,8 @@ const SavedList = (props) => {
     return SearchManager.getAllRestaurants().then(response => {
         let user=sessionStorage.getItem('user');
         let user_id=JSON.parse(user).id
-        console.log(user_id)
-        setSaved(response)
-        console.log(response)
+        let filteredResults=response.filter(restaurant=> restaurant.user_id === user_id)
+        setSaved(filteredResults)
     })
   }
   const deleteRestaurant = id => {
