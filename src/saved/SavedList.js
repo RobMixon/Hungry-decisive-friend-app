@@ -34,8 +34,6 @@ const SavedList = (props) => {
     getSaved()
   }, []);
 
-  console.log(saved)
-
   return (
     <>
     <main className="savedList">
