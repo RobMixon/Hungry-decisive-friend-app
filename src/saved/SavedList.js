@@ -9,10 +9,12 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 const SavedList = (props) => {
   const [saved, setSaved] = useState([]);
-  const [value,setValue]=useState('');
+  const [value,setValue]=useState([]);
 
   const handleSelect=(e)=>{
-    setValue(e)
+    let filteredByType= saved.filter(place=>place.type===e)
+    setValue(filteredByType)
+    setSaved(filteredByType)
   }
 
   const getSaved = () => {
@@ -20,12 +22,10 @@ const SavedList = (props) => {
         let user=sessionStorage.getItem('user');
         let user_id=JSON.parse(user).id
         let filteredByUser=response.filter(place=> place.user_id === user_id)
-        // let filterByType=response.filter(place=> place === value)
-        // let filtered = value=''? setSaved(filteredByUser) : setSaved(filterByType)
-        // return filtered;
         setSaved(filteredByUser)
     })
   }
+
   const deletePlace = id => {
     SearchManager.delete(id)
     .then(() => getSaved());
@@ -67,13 +67,13 @@ const SavedList = (props) => {
       </div>
       <section className="savedList__subpage"> 
         <div className="results">
-          {saved.map(saved =>
+          {(value.type) ? console.log(value) : saved.map(saved =>
           <SavedCard 
           key={saved.id} 
           saved={saved} 
           deletePlace={deletePlace} 
-          {...props}/>
-          )}
+          {...props}/>)
+          }
         </div>
       </section>
     </main>

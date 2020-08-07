@@ -7,8 +7,9 @@ import './Search.css';
 
 const SearchDetail = props => {
   const [search, setSearch] = useState({name:"", place_id:"",user_id:null, comment:""});
-  const [result, setResult] = useState({name:"", formatted_address:"", rating:"",formatted_phone_number:"",website:"",place_id:""})
+  const [result, setResult] = useState({name:"", formatted_address:"", rating:"",formatted_phone_number:"",website:"",place_id:"",type:""})
   const [isLoading, setIsLoading] = useState(false)
+  console.log(props)
 
   useEffect(() => {
     SearchManager.getDetail(props.place_id).then(results => {
@@ -16,7 +17,7 @@ const SearchDetail = props => {
     let user=sessionStorage.getItem('user');
     let user_id=JSON.parse(user).id
     let comment=document.querySelector("#comment").value
-    let nameAndId = {name:`${randomResult.name}`, place_id:`${randomResult.place_id}`,user_id, comment:`${comment}`}
+    let nameAndId = {name:`${randomResult.name}`, place_id:`${randomResult.place_id}`,user_id, comment:`${comment}`, type:`${randomResult.types[0]}`}
       setResult(randomResult);
       setSearch(nameAndId);
     });
@@ -31,7 +32,6 @@ const SearchDetail = props => {
   const constructNewPlace = evt => {
     evt.preventDefault();
     setIsLoading(true);
-
     // Create the restaurant and redirect user to saved  page
     SearchManager.postPlace(search)
       .then(() => props.history.push("/saved"));
