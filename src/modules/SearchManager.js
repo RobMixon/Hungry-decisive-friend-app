@@ -2,7 +2,7 @@ import Keys from "../Keys";
 
 const api="https://maps.googleapis.com/maps/api/place/textsearch/json?query="
 const url="https://maps.googleapis.com/maps/api/place/details/json?place_id="
-const detail="&fields=name,rating,formatted_phone_number,formatted_address,website,place_id"
+const detail="&fields=name,rating,formatted_phone_number,formatted_address,website,place_id,type"
 const json="http://localhost:5002"
 
 export default {

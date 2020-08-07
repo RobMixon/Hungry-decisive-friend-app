@@ -9,10 +9,11 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 const SavedList = (props) => {
   const [saved, setSaved] = useState([]);
-  const [value,setValue]=useState('');
+  const [typeResult,setTypeResult]=useState([]);
 
-  const handleSelect=(e)=>{
-    setValue(e)
+  const handleSelect=(e) => {
+    let filteredByType= saved.filter(place=>place.type===e)
+    setTypeResult(filteredByType)
   }
 
   const getSaved = () => {
@@ -20,12 +21,10 @@ const SavedList = (props) => {
         let user=sessionStorage.getItem('user');
         let user_id=JSON.parse(user).id
         let filteredByUser=response.filter(place=> place.user_id === user_id)
-        // let filterByType=response.filter(place=> place === value)
-        // let filtered = value=''? setSaved(filteredByUser) : setSaved(filterByType)
-        // return filtered;
         setSaved(filteredByUser)
     })
   }
+
   const deletePlace = id => {
     SearchManager.delete(id)
     .then(() => getSaved());
@@ -49,31 +48,39 @@ const SavedList = (props) => {
         onSelect={handleSelect}
           >
           <div className="dropDown_box">
-        <Dropdown.Item className="dropDown_item" eventKey="restaurant">Restaurant</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item className="dropDown_item" eventKey="bar">Bar</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item className="dropDown_item" eventKey="book_store">Book Store</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item className="dropDown_item" eventKey="cafe">Cafe</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item className="dropDown_item" eventKey="library">library</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item className="dropDown_item" eventKey="museum">Museum</Dropdown.Item>
-        <Dropdown.Divider />
-        <Dropdown.Item className="dropDown_item" eventKey="tourist_attraction">Tourist Attraction</Dropdown.Item>
-        </div>
+            <Dropdown.Item className="dropDown_item" eventKey="">All Places</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item className="dropDown_item" eventKey="restaurant">Restaurant</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item className="dropDown_item" eventKey="bar">Bar</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item className="dropDown_item" eventKey="book_store">Book Store</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item className="dropDown_item" eventKey="cafe">Cafe</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item className="dropDown_item" eventKey="library">library</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item className="dropDown_item" eventKey="museum">Museum</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item className="dropDown_item" eventKey="tourist_attraction">Tourist Attraction</Dropdown.Item>
+          </div>
       </DropdownButton>
       </div>
       <section className="savedList__subpage"> 
         <div className="results">
-          {saved.map(saved =>
-          <SavedCard 
-          key={saved.id} 
-          saved={saved} 
-          deletePlace={deletePlace} 
-          {...props}/>
-          )}
+          {(typeResult.length>0) ? typeResult.map(saved =>
+            <SavedCard 
+            key={saved.id} 
+            saved={saved} 
+            deletePlace={deletePlace} 
+            {...props}/>)
+           :saved.map(saved =>
+            <SavedCard 
+            key={saved.id} 
+            saved={saved} 
+            deletePlace={deletePlace} 
+            {...props}/>)
+          }
         </div>
       </section>
     </main>
